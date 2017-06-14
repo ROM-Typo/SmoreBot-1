@@ -335,6 +335,12 @@ end
 		handle:close()
 		message.channel:sendMessage(string.format("I am hosted on `%s`",result))
 	end
+if cmd == (string.format(prefix .. 'github host')) then
+		local handle = io.popen("git remote -v")
+		local result = handle:read("*a")
+		handle:close()
+		message.channel:sendMessage(string.format("Github Host Data:\n ```%s```",result))
+	end
 
 	if cmd == (string.format(prefix .. 'update')) then
 		if message.author.id == CHRONOMLY or message.author.id == ROMTYPO or message.author.id == JDENDER or message.author.id == SPACEX then
